@@ -33,9 +33,9 @@ for (var i = 0; i < artboards.count(); i++) {
   var artboardName = artboard.name();
   // run the name through the regex.  If it matches, split and replace name with split result
 
-  if(artboardPrefixRegex.test(artboardName)){
-    artboardName = artboardName.split(artboardPrefixRegex)[1]
-  };
+  // if(artboardPrefixRegex.test(artboardName)){
+    artboardName = artboardName.split('_')[0];
+  // };
 
   artboardsMeta.push({
     artboard: artboard,
@@ -87,7 +87,7 @@ for (var i = 0; i < artboardsMeta.length; ++i) {
     var formattedRow = currentColumn < 10 ? '0' + currentColumn : currentColumn;
 
     // Assemble the new artboard name
-    var finalName = charCode + formattedRow + '_' + name;
+    var finalName = name + '_' + charCode + formattedRow;
 
     artboardObject = artboard.artboard;
     renameArtboard(artboardObject, finalName);
