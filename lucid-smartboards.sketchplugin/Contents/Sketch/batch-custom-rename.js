@@ -38,8 +38,8 @@ var onRun = function(context) {
 			var artboardName = artboardObject.name();
 
 			if(artboardPrefixRegex.test(artboardName)){
-				var prefix = artboardName.split('_')[0];
-				artboardName = prefix + '_' + alert.viewAtIndex(1).stringValue();
+				var prefix = artboardName.split('_')[1];
+				artboardName = alert.viewAtIndex(1).stringValue() + '_' + prefix;
 			} else {
 				artboardName = alert.viewAtIndex(1).stringValue();
 			}
